@@ -33,7 +33,7 @@ export const Login =async () => {
 
    await new Promise(resolve => setTimeout(resolve, 8000)); 
    const cookies = await page.cookies();
-   await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
+      await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
 
 
   
