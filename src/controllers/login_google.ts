@@ -20,26 +20,30 @@ export const Login =async () => {
   await page.waitForSelector('[name="passwd"]', { visible: true });
   
   await page.type('[name="passwd"]', password);
-  // await page.waitForSelector('#idSIButton9', { visible: true });
   await new Promise(resolve => setTimeout(resolve, 3000));
-
   await page.keyboard.press('Enter');
 
 /* await page.waitForSelector('#idSIButton9', { visible: true });
- */await new Promise(resolve => setTimeout(resolve, 12000));
+ */
+  await new Promise(resolve => setTimeout(resolve, 12000));
+    
+
    await page.keyboard.press('Enter');
-   await new Promise(resolve => setTimeout(resolve, 5000));
+   await new Promise(resolve => setTimeout(resolve, 6000));
+
    await page.click ('[jsname="V67aGc"]');
 
-   await new Promise(resolve => setTimeout(resolve, 8000)); 
+/*    await new Promise(resolve => setTimeout(resolve, 8000)); 
+ */   
+   await page.waitForNavigation()
    const cookies = await page.cookies();
-      await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
+   await fs.writeFile('./cookies.json', JSON.stringify(cookies, null, 2));
 
 
   
 
 
-  //   await browser.close();
+   await browser.close();
 }
 
 
